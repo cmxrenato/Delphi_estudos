@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{F5EFEF8E-3942-42A7-B004-6DDAE1256586}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Project1_olaMundo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Test\Project1_olaMundoTests.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Project1_olaMundo">
+        <MSBuild Projects="Project1_olaMundo.dproj"/>
+    </Target>
+    <Target Name="Project1_olaMundo:Clean">
+        <MSBuild Projects="Project1_olaMundo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Project1_olaMundo:Make">
+        <MSBuild Projects="Project1_olaMundo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Project1_olaMundoTests">
+        <MSBuild Projects="Test\Project1_olaMundoTests.dproj"/>
+    </Target>
+    <Target Name="Project1_olaMundoTests:Clean">
+        <MSBuild Projects="Test\Project1_olaMundoTests.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Project1_olaMundoTests:Make">
+        <MSBuild Projects="Test\Project1_olaMundoTests.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Project1_olaMundo;Project1_olaMundoTests"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Project1_olaMundo:Clean;Project1_olaMundoTests:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Project1_olaMundo:Make;Project1_olaMundoTests:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
