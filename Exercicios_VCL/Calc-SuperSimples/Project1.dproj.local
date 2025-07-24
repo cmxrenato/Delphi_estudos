@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2025/07/23 16:30:26.000.975,=C:\Users\renat\Downloads\Delphi\Unit1.pas</Transaction>
+    <Transaction>2025/07/24 12:12:49.149,=C:\Users\renat\Downloads\Delphi\Unit1.pas</Transaction>
+    <Transaction>2025/07/24 12:25:42.411,C:\Users\renat\Downloads\Delphi\Exercicios_VCL\Calc-SuperSimples\Unit1.pas=C:\Users\renat\Downloads\Delphi\Unit1.pas</Transaction>
+    <Transaction>2025/07/24 12:25:42.411,C:\Users\renat\Downloads\Delphi\Exercicios_VCL\Calc-SuperSimples\Unit1.dfm=C:\Users\renat\Downloads\Delphi\Unit1.dfm</Transaction>
+    <Transaction>2025/07/24 12:38:47.227,C:\Users\renat\Downloads\Delphi\Exercicios_VCL\Calc-SuperSimples\Project1.dproj=C:\Users\renat\Downloads\Delphi\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
