@@ -1,0 +1,35 @@
+program Project1;
+
+{$APPTYPE CONSOLE}
+
+{$R *.res}
+
+uses
+  System.SysUtils;
+type
+  TPessoa = class
+    private
+      FNome:String;
+      FIdade:Integer;
+    public
+      constructor Create(Nome:String;Idade:Integer);
+      procedure ExibirDados;
+  end;
+  constructor TPessoa.Create(Nome: string; Idade: Integer);
+    begin
+      FNome := Nome;
+      FIdade := Idade;
+    end;
+  procedure TPessoa.ExibirDados;
+  begin
+    Writeln('Nome: ',FNome,' / Idade: ',IntToStr(FIdade));
+  end;
+
+begin
+  try
+    { TODO -oUser -cConsole Main : Insert code here }
+  except
+    on E: Exception do
+      Writeln(E.ClassName, ': ', E.Message);
+  end;
+end.

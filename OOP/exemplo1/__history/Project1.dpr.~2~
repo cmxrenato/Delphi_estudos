@@ -1,0 +1,30 @@
+program Project1;
+
+{$APPTYPE CONSOLE}
+
+{$R *.res}
+
+uses
+  System.SysUtils;
+
+type
+  TPessoa = class
+    public
+      Nome: String;
+      Idade: Integer;
+      procedure ExibirDados;
+  end;
+
+  procedure TPessoa.ExibirDados;
+  begin
+    Writeln('Nome: ',Nome, ' | Idade: ',Idade);
+  end;
+
+begin
+  try
+    { TODO -oUser -cConsole Main : Insert code here }
+  except
+    on E: Exception do
+      Writeln(E.ClassName, ': ', E.Message);
+  end;
+end.
