@@ -1,0 +1,52 @@
+program Project1;
+
+{$APPTYPE CONSOLE}
+
+{$R *.res}
+
+uses
+  System.SysUtils;
+type
+  TLivraria = class
+  private
+    FNome : String;
+    FAno : Integer;
+  public
+    constructor Create(Nome: String; Ano : Integer);
+    procedure ExibirDados;
+    destructor Destroy; override;
+end;
+
+constructor TLivraria.Create(Nome: string; Ano: Integer);
+begin
+  Fnome:=Nome;
+  FAno:=Ano;
+end;
+
+procedure TLivraria.ExibirDados;
+begin
+  Writeln('Autor: ', FNome,' | Ano de Publicação: ', FAno.ToString);
+end;
+
+destructor TLivraria.Destroy;
+begin
+  Writeln('Liberando objeto de: ',FNome);
+  inherited Destroy;
+end;
+
+var
+  Livraria : TLivraria;
+
+begin
+  try
+    { TODO -oUser -cConsole Main : Insert code here }
+    Livraria:= TLivraria.Create('Machado de Assis',1900);
+    Livraria.ExibirDados;
+    Readln;
+    Livraria.Free;
+    Readln;
+  except
+    on E: Exception do
+      Writeln(E.ClassName, ': ', E.Message);
+  end;
+end.

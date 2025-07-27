@@ -1,0 +1,46 @@
+program Project1;
+
+{$APPTYPE CONSOLE}
+
+{$R *.res}
+
+uses
+  System.SysUtils;
+
+type
+  TPessoa = class
+    private
+      FNome:String;
+      FIdade:Integer;
+    public
+      procedure SetNome(Nome:String);
+      procedure SetIdade(Idade:String);
+      procedure MostrarDados;
+  end;
+
+  implementation
+
+    procedure TPessoa.SetNome(Nome: string);
+    begin
+     FNome := Nome;
+    end;
+    procedure TPessoa.SetIdade(Idade: Integer);
+    begin
+     FIdade := Idade;
+    end;
+    procedure TPessoa.MostrarNome;
+    begin
+      Writeln('Nome: ' + FNome);
+      Writeln('Idade: ',Idade);
+    end;
+
+
+
+begin
+  try
+    { TODO -oUser -cConsole Main : Insert code here }
+  except
+    on E: Exception do
+      Writeln(E.ClassName, ': ', E.Message);
+  end;
+end.
