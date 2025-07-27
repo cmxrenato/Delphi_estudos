@@ -1,0 +1,39 @@
+unit uProduto;
+
+interface
+uses
+  Vcl.Dialogs, System.SysUtils;
+type
+  TProduto = class
+  private
+    FNome : String;
+    FPreco : Double;
+    procedure SetNome(const Value:String);
+    procedure SetPreco(Value:Double);
+
+  public
+    constructor Create(Nome:String; Preco:Double);
+    destructor Destroy;override;
+    procedure ExibirDados;
+
+    property Nome:String read FNome write SetNome;
+    property Preco:Double read FPreco write SetPreco;
+
+
+end;
+
+implementation
+
+constructor TProduto.Create(Nome: string; Preco: Double);
+begin
+  FNome:String;
+  FPreco:Double;
+  ShowMessage('Pessoa criada');
+end;
+destructor TProduto.Destroy;
+begin
+  ShowMessage('Memória Liberada');
+  inherited Destroy;
+end;
+
+end.
