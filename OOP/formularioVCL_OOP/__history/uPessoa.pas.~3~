@@ -18,7 +18,7 @@ type
     procedure ExibirDados;
 
      property Nome: string read FNome write SetNome;
-     property Idade: Integer read FIdade write SetIdade;
+    property Idade: Integer read FIdade write SetIdade;
   end;
 
 implementation
@@ -39,22 +39,6 @@ end;
 procedure TPessoa.ExibirDados;
 begin
   ShowMessage('Nome: ' + FNome + ' | Idade: ' + FIdade.ToString);
-end;
-
-procedure TPessoa.SetNome(const Value: string);
-begin
-  if Value <> '' then
-    FNome := Value
-  else
-    ShowMessage('O nome não pode ser vazio!');
-end;
-
-procedure TPessoa.SetIdade(Value: Integer);
-begin
-  if Value >= 0 then
-    FIdade := Value
-  else
-    ShowMessage('Idade inválida!');
 end;
 
 end.

@@ -44,8 +44,9 @@ begin
     ShowMessage('Já existe uma pessoa criada!')
   else
   begin
-    Pessoa := TPessoa.Create(Edit1.Text, StrToIntDef(Edit2.Text, 0));
-    Pessoa.ExibirDados;
+    Pessoa := TPessoa.Create;
+    Pessoa.Nome:= Edit1.Text;
+    Pessoa.Idade:= Edit2.Text;
   end;
 end;
 
@@ -55,6 +56,7 @@ begin
   begin
     Pessoa.Free;
     Pessoa := nil;
+
   end
   else
     ShowMessage('Nenhuma pessoa criada!');

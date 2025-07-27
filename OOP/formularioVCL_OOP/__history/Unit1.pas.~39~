@@ -8,8 +8,8 @@ uses
 
 type
   TForm1 = class(TForm)
-    Edit1: TEdit; // Nome
-    Edit2: TEdit; // Idade
+    Edit1: TEdit;
+    Edit2: TEdit;
     BtnCriar: TButton;
     BtnLiberar: TButton;
     procedure FormCreate(Sender: TObject);
@@ -44,9 +44,8 @@ begin
     ShowMessage('Já existe uma pessoa criada!')
   else
   begin
-    Pessoa := TPessoa.Create(Edit1.Text, StrToIntDef(Edit2.Text, 0)); // OU com parâmetros: TPessoa.Create(Edit1.Text, StrToIntDef(Edit2.Text, 0))
-    Pessoa.Nome := Edit1.Text;
-    Pessoa.Idade := StrToIntDef(Edit2.Text, 0);
+    Pessoa := TPessoa.Create;
+    Pessoa.Nome:=Edit1.Text;
     Pessoa.ExibirDados;
   end;
 end;
@@ -57,6 +56,7 @@ begin
   begin
     Pessoa.Free;
     Pessoa := nil;
+
   end
   else
     ShowMessage('Nenhuma pessoa criada!');
