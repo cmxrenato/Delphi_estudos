@@ -35,9 +35,8 @@ implementation
 procedure TForm1.Button2Click(Sender: TObject);
 begin
   if Assigned(Produto) then
-  begin
+
   Produto.ExibirDados;
-  end
   else
     ShowMessage('Não há produto');
 end;
@@ -64,9 +63,9 @@ if Assigned(Produto) then
     ShowMessage('Já existe um produto criado!')
   else
   begin
-    Produto := TProduto.Create; // OU com parâmetros: TPessoa.Create(Edit1.Text, StrToIntDef(Edit2.Text, 0))
-    Produto.Nome := Edit1.Text;
-    Produto.Preco := StrToFloatDef(Edit2.Text, 0);
+    Produto := TProduto.Create(Edit1.Text, StrToFloatDef(Edit2.Text, 0)); // OU com parâmetros: TPessoa.Create(Edit1.Text, StrToIntDef(Edit2.Text, 0))
+   // Produto.Nome := Edit1.Text;
+   // Produto.Preco := StrToFloatDef(Edit2.Text, 0);
 
   end;
 end;

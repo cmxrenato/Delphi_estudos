@@ -12,7 +12,7 @@ type
     procedure SetPreco(Value:Double);
 
   public
-
+    constructor Create(Nome:String; Preco:Double);
     destructor Destroy;override;
     procedure ExibirDados;
 
@@ -24,7 +24,12 @@ end;
 
 implementation
 
-
+constructor TProduto.Create(Nome: string; Preco: double);
+begin
+  FNome:=Nome;
+  FPreco:=Preco;
+  ShowMessage('Produto criado com sucesso');
+end;
 destructor TProduto.Destroy;
 begin
   ShowMessage('Memória Liberada');

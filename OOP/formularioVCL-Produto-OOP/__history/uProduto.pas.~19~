@@ -26,14 +26,34 @@ implementation
 
 constructor TProduto.Create(Nome: string; Preco: Double);
 begin
-  FNome:String;
-  FPreco:Double;
+  FNome:=Nome;
+  FPreco:=Preco;
   ShowMessage('Pessoa criada');
 end;
 destructor TProduto.Destroy;
 begin
   ShowMessage('Memória Liberada');
   inherited Destroy;
+end;
+    procedure TProduto.ExibirDados;
+    begin
+      ShowMessage('Nome: '+FNome+' | Preco: '+FPreco.ToString);
+    end;
+procedure TProduto.SetNome(const Value: string);
+begin
+  if Value <> '' then
+  FNome := Value
+  else
+  ShowMessage('O Nome não pode ser vazio');
+end;
+
+procedure TProduto.SetPreco(Value: Double);
+begin
+  if Value >= 0 then
+  FPreco := Value
+  else
+  ShowMessage('Preco invalido');
+
 end;
 
 end.
